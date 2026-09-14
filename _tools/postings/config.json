@@ -1,0 +1,18 @@
+{
+  "siteUrl": "https://nastajus.github.io",
+  "basePath": "/postings/",
+  "timeZone": "America/Toronto",
+  "bursts": [
+    {
+      "source": "../search week 37 in 2026",
+      "year": 2026,
+      "slug": "w37",
+      "label": "Week 37 · 2026",
+      "searchedOn": "2026-09-11",
+      "sourceLabel": "JVS internal job board",
+      "groups": {
+        "search nvm": { "slug": "nvm", "label": "NVM", "hidden": true }
+      }
+    }
+  ]
+}

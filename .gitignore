@@ -3,3 +3,5 @@ desktop.ini
 ## Directory-based project format:
 .idea/
 portfolio/Thumbs.db
+_tools/postings/node_modules/
+_tools/postings/.local/
