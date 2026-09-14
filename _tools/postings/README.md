@@ -28,6 +28,8 @@ npm.cmd run preview
 
 Preview: http://127.0.0.1:18766/postings/. Copy-link buttons always copy the **public** URL, including in local preview. Sidebar toggle: button or Ctrl+Shift+S. The index is plain HTML and works without JavaScript; scripts add search, clipboard support and the sidebar toggle.
 
+After GitHub Pages finishes deploying, run `node check-live.mjs` to compare every current page, saved copy and asset with the published version. Add `--local` to check the local preview instead.
+
 ## Preservation and metadata
 
 - Friendly pages include readable posting content and a link to `saved.html`, a styled copy of the original capture with account navigation and active controls removed. Originals are never rewritten. Captured wording is retained. The Java posting's display title follows its actual description; the source title is recorded explicitly.

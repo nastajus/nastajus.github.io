@@ -1,4 +1,5 @@
 import {execFileSync} from 'node:child_process';
+import {readdir} from 'node:fs/promises';
 import {repoRoot,build} from './build.mjs';
 import {verify} from './verify.mjs';
 const git=(...args)=>execFileSync('git',args,{cwd:repoRoot,encoding:'utf8'}).trim();
@@ -9,7 +10,8 @@ const allowed=file=>file.startsWith('postings/')||file.startsWith('_tools/postin
 if(git('diff','--cached','--name-only').split('\n').filter(Boolean).some(file=>!allowed(file)))throw Error('Unrelated files are staged; commit them separately');
 git('pull','--ff-only','origin','master');
 await build();
-execFileSync(process.execPath,['--test','tests/extract.test.mjs'],{cwd:new URL('.',import.meta.url),stdio:'inherit'});
+const testFiles=(await readdir(new URL('tests/',import.meta.url))).filter(name=>name.endsWith('.test.mjs')).map(name=>'tests/'+name);
+execFileSync(process.execPath,['--test',...testFiles],{cwd:new URL('.',import.meta.url),stdio:'inherit'});
 await verify();
 git('add','--','postings','_tools/postings','.gitignore');
 if(git('diff','--cached','--name-only'))git('commit','-m','Update shareable saved job postings');
