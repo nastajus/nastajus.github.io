@@ -1,4 +1,4 @@
-# Saved postings: requirements and handoff
+# Job Shelf: requirements and handoff
 
 Recovered and checked on 2026-09-14 from prior conversation
 `01a091be-1960-7f80-8767-47e0111b8f17`, the implementation, Git history,
@@ -79,6 +79,12 @@ npm.cmd --prefix jvs/postings-site/_tools/postings run publish
 node jvs/postings-site/_tools/postings/check-live.mjs
 ```
 
-For preview, select **Saved postings: preview in Firefox** in VS Code and press F5.
+For preview, select **Job Shelf** in VS Code and press F5.
 Preview serves existing generated files; it does not rebuild or publish them.
 Follow `AGENTS.md` for scope, preservation, checks, commits, and fast-forward publishing.
+
+## Naming and workflow preference (2026-09-15)
+
+The project and compact VS Code launcher are named **Job Shelf**. Keep existing
+repository folders and public `/postings/` URLs stable. Automatically commit scoped
+changes after each prompt; no additional commit confirmation is needed.

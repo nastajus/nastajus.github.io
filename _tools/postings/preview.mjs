@@ -17,11 +17,11 @@ const server=http.createServer(async(req,res)=>{
 });
 server.listen(18766,'127.0.0.1',()=>{
  const url='http://127.0.0.1:18766/postings/';
- console.log('Postings preview: '+url);
+ console.log('Job Shelf preview: '+url);
  if(process.env.POSTINGS_OPEN_FIREFOX==='1'){
   const browser=spawn('C:/Program Files/Mozilla Firefox/firefox.exe',['-new-tab',url],{detached:true,stdio:'ignore',windowsHide:true});
   browser.on('error',error=>console.error('Firefox could not open:',error.message));
   browser.unref();
  }
 });
-server.on('error',error=>{console.error(error.code==='EADDRINUSE'?'Port 18766 is already in use. Stop the previous postings preview before launching again.':error.message);process.exitCode=1;});
+server.on('error',error=>{console.error(error.code==='EADDRINUSE'?'Port 18766 is already in use. Stop the previous Job Shelf preview before launching again.':error.message);process.exitCode=1;});

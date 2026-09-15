@@ -1,4 +1,4 @@
-# Saved postings publisher
+# Job Shelf
 
 Public index: https://nastajus.github.io/postings/
 
@@ -19,7 +19,7 @@ For a future search burst, add an object to `config.json` under `bursts`. `sourc
 
 ## Preview and verify
 
-With the `career` folder open in VS Code, choose **Run and Debug → Saved postings: preview in Firefox**, then press **F5**. This starts the local preview and opens Firefox; it does not publish or rebuild postings. Stop debugging to stop the preview server. The existing Boardwatch launcher stays available separately. To reinstall this parent-workspace entry, run `node install-preview-launch.mjs` from this directory. The parent `.vscode/launch.json` is outside this repository; its installer is tracked here.
+With the `career` folder open in VS Code, choose **Run and Debug → Job Shelf**, then press **F5**. This starts the local preview and opens Firefox; it does not publish or rebuild postings. Stop debugging to stop the preview server. The existing Boardwatch launcher stays available separately. To reinstall this parent-workspace entry, run `node install-preview-launch.mjs` from this directory. The parent `.vscode/launch.json` is outside this repository; its installer is tracked here.
 
 ```powershell
 npm.cmd run build

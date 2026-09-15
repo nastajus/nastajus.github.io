@@ -1,3 +1,3 @@
-# Saved postings publisher
+# Job Shelf
 
 The user authorized building, committing and pushing saved job postings to nastajus/nastajus.github.io. Keep all changes scoped to `/postings`, this tooling directory and the corresponding ignore entries. Do not publish original local directories, private browser shortcuts, account controls, session credentials or unrelated files. NVM is collapsed by default, not private or access-controlled. Preserve saved timestamps and existing shared URLs. Run tests and verify before pushing. Do not overwrite unrelated remote changes; use fast-forward updates. Commit after each prompt. The input burst directories live outside this repository and remain untouched.

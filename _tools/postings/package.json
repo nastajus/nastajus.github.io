@@ -1,5 +1,5 @@
 {
-  "name": "saved-postings-publisher",
+  "name": "job-shelf",
   "private": true,
   "type": "module",
   "scripts": {
