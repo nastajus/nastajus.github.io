@@ -33,16 +33,18 @@
             text-align: center;
         }
 
-        h1 {
+        .name {
             margin: 0 0 6px;
             font-size: clamp(1.8rem, 8vw, 2.5rem);
             line-height: 1.05;
+            font-weight: 700;
         }
 
         header p {
             margin: 0;
             color: #52606d;
-            font-size: 1rem;
+            font-size: clamp(1.2rem, 5vw, 1.45rem);
+            line-height: 1.35;
         }
 
         .resume-card {
@@ -91,11 +93,11 @@
 <body>
 <main>
     <header>
-        <h1>Ian Nastajus</h1>
         <p>Scan a QR code to view a résumé.</p>
     </header>
 
     <section class="resume-card" aria-labelledby="recent-title">
+        <div class="name">Ian Nastajus</div>
         <h2 id="recent-title">Recent Résumé</h2>
         <p class="description">A concise overview of my recent experience.</p>
         <a class="qr-link" href="../IanNastajusResumeRecent.pdf" aria-label="Open Ian Nastajus's recent résumé">
@@ -105,6 +107,7 @@
     </section>
 
     <section class="resume-card" aria-labelledby="work-title">
+        <div class="name">Ian Nastajus</div>
         <h2 id="work-title">Work Résumé</h2>
         <p class="description">A focused summary of my work experience.</p>
         <a class="qr-link" href="../IanNastajusResumeWork.pdf" aria-label="Open Ian Nastajus's work résumé">
