@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f1ea">
+    <title>Ian Nastajus — Résumés</title>
+    <style>
+        :root {
+            color-scheme: light;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f1ea;
+            color: #17202a;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            padding: 28px 18px 40px;
+        }
+
+        main {
+            width: min(100%, 460px);
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 22px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0 0 6px;
+            font-size: clamp(1.8rem, 8vw, 2.5rem);
+            line-height: 1.05;
+        }
+
+        header p {
+            margin: 0;
+            color: #52606d;
+            font-size: 1rem;
+        }
+
+        .resume-card {
+            margin-top: 18px;
+            padding: 22px;
+            border: 1px solid #d8d2c4;
+            border-radius: 20px;
+            background: #ffffff;
+            box-shadow: 0 8px 24px rgba(23, 32, 42, 0.08);
+            text-align: center;
+        }
+
+        h2 {
+            margin: 0 0 5px;
+            font-size: 1.35rem;
+        }
+
+        .description {
+            margin: 0 0 16px;
+            color: #52606d;
+            line-height: 1.4;
+        }
+
+        .qr-link {
+            display: block;
+            border-radius: 12px;
+        }
+
+        .qr-link img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .open-link {
+            display: inline-block;
+            margin-top: 14px;
+            color: #174ea6;
+            font-weight: 700;
+            text-decoration-thickness: 2px;
+            text-underline-offset: 3px;
+        }
+    </style>
+</head>
+<body>
+<main>
+    <header>
+        <h1>Ian Nastajus</h1>
+        <p>Scan a QR code to view a résumé.</p>
+    </header>
+
+    <section class="resume-card" aria-labelledby="recent-title">
+        <h2 id="recent-title">Recent Résumé</h2>
+        <p class="description">A concise overview of my recent experience.</p>
+        <a class="qr-link" href="../IanNastajusResumeRecent.pdf" aria-label="Open Ian Nastajus's recent résumé">
+            <img src="recent-resume-qr.png" alt="QR code for Ian Nastajus's recent résumé" width="768" height="768">
+        </a>
+        <a class="open-link" href="../IanNastajusResumeRecent.pdf">Open recent résumé</a>
+    </section>
+
+    <section class="resume-card" aria-labelledby="work-title">
+        <h2 id="work-title">Work Résumé</h2>
+        <p class="description">A focused summary of my work experience.</p>
+        <a class="qr-link" href="../IanNastajusResumeWork.pdf" aria-label="Open Ian Nastajus's work résumé">
+            <img src="work-resume-qr.png" alt="QR code for Ian Nastajus's work résumé" width="768" height="768">
+        </a>
+        <a class="open-link" href="../IanNastajusResumeWork.pdf">Open work résumé</a>
+    </section>
+</main>
+</body>
+</html>
