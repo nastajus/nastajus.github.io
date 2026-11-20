@@ -19,7 +19,6 @@
     ])
   );
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  const mobileLayout = window.matchMedia('(max-width: 760px)');
 
   let sceneMetrics = [];
   let transitionMetrics = [];
@@ -35,22 +34,6 @@
   function measure() {
     viewportHeight = window.innerHeight;
     scrollableHeight = Math.max(1, document.documentElement.scrollHeight - viewportHeight);
-    scenes.forEach((element) => {
-      if (!mobileLayout.matches || reducedMotion.matches) {
-        element.style.removeProperty('--mobile-progress-top');
-        element.style.removeProperty('--mobile-gallery-top');
-        return;
-      }
-      const copy = element.querySelector('.project-copy');
-      const progress = element.querySelector('[data-scene-progress]');
-      if (!copy || !progress) return;
-      const copyBottom = copy.offsetTop + copy.offsetHeight;
-      const baseGalleryTop = viewportHeight * .55;
-      const progressTop = Math.max(baseGalleryTop - progress.offsetHeight, copyBottom + 12);
-      const galleryTop = Math.max(baseGalleryTop, progressTop + progress.offsetHeight + 6);
-      element.style.setProperty('--mobile-progress-top', `${Math.round(progressTop)}px`);
-      element.style.setProperty('--mobile-gallery-top', `${Math.round(galleryTop)}px`);
-    });
     sceneMetrics = scenes.map((element) => {
       const top = pageTop(element);
       const height = element.offsetHeight;
@@ -132,6 +115,7 @@
     sceneMetrics.forEach((metric) => {
       const visible = metric.bottom > scrollY && metric.top < viewportBottom;
       const progress = clamp((scrollY - metric.top) / metric.travel);
+      metric.element.classList.toggle('is-gallery-focused', progress >= .04);
 
       if (visible !== metric.inView) {
         metric.inView = visible;
