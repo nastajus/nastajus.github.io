@@ -14,6 +14,7 @@
         progress: gallery.closest('[data-scene]')?.querySelector('[data-scene-progress]'),
         scene: gallery.closest('[data-scene]'),
         orbit: gallery.querySelector('[data-gallery-orbit]') || gallery.closest('[data-scene]')?.querySelector('[data-gallery-orbit]'),
+        mobileFeature: gallery.closest('[data-scene]')?.querySelector('[data-mobile-feature]'),
         current: -1
       }
     ])
@@ -66,6 +67,15 @@
       gallery.counter.textContent = `${String(index + 1).padStart(2, '0')} / ${String(gallery.images.length).padStart(2, '0')}`;
     }
     if (gallery.caption) gallery.caption.textContent = gallery.images[index].dataset.caption || '';
+    if (gallery.mobileFeature) {
+      const image = gallery.images[index];
+      const mobileCounter = gallery.mobileFeature.querySelector('[data-mobile-counter]');
+      const mobileTitle = gallery.mobileFeature.querySelector('[data-mobile-title]');
+      const mobileSummary = gallery.mobileFeature.querySelector('[data-mobile-summary]');
+      if (mobileCounter) mobileCounter.textContent = `${String(index + 1).padStart(2, '0')} / ${String(gallery.images.length).padStart(2, '0')}`;
+      if (mobileTitle) mobileTitle.textContent = image.dataset.mobileTitle || image.dataset.title || '';
+      if (mobileSummary) mobileSummary.textContent = image.dataset.mobileSummary || image.dataset.feature || image.dataset.caption || '';
+    }
     if (gallery.progress) {
       gallery.progress.querySelectorAll('[data-scene-jump]').forEach((segment, segmentIndex) => {
         segment.classList.toggle('is-complete', segmentIndex <= index);
@@ -132,7 +142,10 @@
       }
 
       const gallery = galleries.get(metric.id);
-      if (gallery) setGalleryFrame(gallery, Math.min(gallery.images.length - 1, Math.floor(progress * gallery.images.length)));
+      if (gallery) {
+        if (gallery.mobileFeature) gallery.mobileFeature.setAttribute('aria-hidden', String(progress < .04));
+        setGalleryFrame(gallery, Math.min(gallery.images.length - 1, Math.floor(progress * gallery.images.length)));
+      }
     });
 
     transitionMetrics.forEach((metric) => {
