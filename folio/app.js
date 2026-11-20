@@ -179,7 +179,9 @@
         const metric = sceneMetrics.find((item) => item.element === gallery.scene);
         const index = Number(button.dataset.sceneJump);
         if (!metric || !Number.isInteger(index)) return;
-        const target = metric.top + metric.travel * ((index + .5) / gallery.images.length);
+        // Use evenly spaced frame starts; the inset keeps the final frame inside the sticky scene.
+        const targetProgress = (index + .08) / gallery.images.length;
+        const target = metric.top + metric.travel * targetProgress;
         window.scrollTo({ top: target, behavior: reducedMotion.matches ? 'auto' : 'smooth' });
       });
     });
