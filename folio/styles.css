@@ -696,7 +696,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .hub-console { inset: 4% 3% 4% 16%; }
   .project-evidence { left: clamp(1.25rem, 6vw, 6rem); right: auto; max-width: 88vw; }
   .science-gallery { top: 40%; width: 100vw; height: 50%; }
-  .science-images::after { background: linear-gradient(0deg, rgba(9,10,14,.82), transparent 50%); }
+  .science-images::after { background: linear-gradient(90deg, #090a0e 0%, rgba(9,10,14,.5) 11%, transparent 26%), linear-gradient(0deg, rgba(9,10,14,.82), transparent 50%); }
   .science-caption { right: 1.25rem; width: calc(100% - 2.5rem); }
   .science-evidence { display: none; }
   .scene-progress { width: 8rem; }
