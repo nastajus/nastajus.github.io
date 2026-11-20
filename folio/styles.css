@@ -711,7 +711,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .intro-orbit { top: 29%; right: -30vw; width: 86vw; opacity: .45; }
   .scroll-cue { right: 1.25rem; font-size: .62rem; line-height: 1.4; }
   .project,
-  .project-science { height: 360svh; }
+  .project-science { height: 520svh; }
   .scene-stage {
     position: sticky;
     display: block;
@@ -721,8 +721,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
   }
   .scene-kicker { top: 5.2rem; left: 1.25rem; right: 1.25rem; }
   .scene-kicker span:last-child { display: none; }
-  .scene-progress { top: 7rem; right: .9rem; z-index: 20; width: 8.5rem; }
-  .scene-progress-segments button { height: 2.2rem; }
+  .scene-progress { top: calc(55% - 2.45rem); right: .9rem; z-index: 20; width: 9rem; }
+  .scene-progress-segments button { height: 2.4rem; touch-action: manipulation; }
   .scene-progress-segments button::before { opacity: .42; }
   .project-copy {
     position: absolute;
