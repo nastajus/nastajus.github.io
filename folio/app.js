@@ -19,6 +19,7 @@
     ])
   );
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const mobileLayout = window.matchMedia('(max-width: 760px)');
 
   let sceneMetrics = [];
   let transitionMetrics = [];
@@ -34,6 +35,22 @@
   function measure() {
     viewportHeight = window.innerHeight;
     scrollableHeight = Math.max(1, document.documentElement.scrollHeight - viewportHeight);
+    scenes.forEach((element) => {
+      if (!mobileLayout.matches || reducedMotion.matches) {
+        element.style.removeProperty('--mobile-progress-top');
+        element.style.removeProperty('--mobile-gallery-top');
+        return;
+      }
+      const copy = element.querySelector('.project-copy');
+      const progress = element.querySelector('[data-scene-progress]');
+      if (!copy || !progress) return;
+      const copyBottom = copy.offsetTop + copy.offsetHeight;
+      const baseGalleryTop = viewportHeight * .55;
+      const progressTop = Math.max(baseGalleryTop - progress.offsetHeight, copyBottom + 12);
+      const galleryTop = Math.max(baseGalleryTop, progressTop + progress.offsetHeight + 6);
+      element.style.setProperty('--mobile-progress-top', `${Math.round(progressTop)}px`);
+      element.style.setProperty('--mobile-gallery-top', `${Math.round(galleryTop)}px`);
+    });
     sceneMetrics = scenes.map((element) => {
       const top = pageTop(element);
       const height = element.offsetHeight;
@@ -157,7 +174,11 @@
   }, { threshold: 0.02 });
   if (intro) introObserver.observe(intro);
 
-  window.addEventListener('scroll', () => requestUpdate(), { passive: true });
+  window.addEventListener('scroll', () => {
+    const activeElement = document.activeElement;
+    if (activeElement instanceof HTMLElement && activeElement.matches('[data-scene-jump]')) activeElement.blur();
+    requestUpdate();
+  }, { passive: true });
   window.addEventListener('resize', () => requestUpdate({ remeasure: true }), { passive: true });
   window.addEventListener('load', () => requestUpdate({ remeasure: true }), { once: true });
   document.addEventListener('visibilitychange', () => {

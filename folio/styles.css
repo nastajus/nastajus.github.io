@@ -294,10 +294,12 @@ button, a { -webkit-tap-highlight-color: transparent; }
   transform: translateY(-.2rem);
   transition: opacity .15s ease, transform .15s ease;
 }
-.scene-progress-segments button:hover::after,
-.scene-progress-segments button:focus-visible::after { opacity: 1; transform: none; }
-.scene-progress-segments button:hover::before,
-.scene-progress-segments button:focus-visible::before { opacity: 1; transform: scaleX(1) scaleY(1.45); }
+.scene-progress-segments button:focus::after { opacity: 1; transform: none; }
+.scene-progress-segments button:focus::before { opacity: 1; transform: scaleX(1) scaleY(1.45); }
+@media (hover: hover) {
+  .scene-progress-segments button:hover::after { opacity: 1; transform: none; }
+  .scene-progress-segments button:hover::before { opacity: 1; transform: scaleX(1) scaleY(1.45); }
+}
 .scene-progress-segments button:nth-child(1) { --segment-color: var(--segment-1); }
 .scene-progress-segments button:nth-child(2) { --segment-color: var(--segment-2); }
 .scene-progress-segments button:nth-child(3) { --segment-color: var(--segment-3); }
@@ -721,7 +723,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   }
   .scene-kicker { top: 5.2rem; left: 1.25rem; right: 1.25rem; }
   .scene-kicker span:last-child { display: none; }
-  .scene-progress { top: calc(55% - 2.45rem); right: .9rem; z-index: 20; width: 9rem; }
+  .scene-progress { top: var(--mobile-progress-top, calc(55% - 2.45rem)); right: .9rem; z-index: 20; width: 9rem; }
   .scene-progress-segments button { height: 2.4rem; touch-action: manipulation; }
   .scene-progress-segments button::before { opacity: .42; }
   .project-copy {
@@ -748,10 +750,10 @@ button, a { -webkit-tap-highlight-color: transparent; }
   }
   .project-gallery {
     position: absolute;
-    top: 55%;
+    top: var(--mobile-gallery-top, 55%);
     right: 0;
     width: 100%;
-    height: 42%;
+    height: calc(97% - var(--mobile-gallery-top, 55%));
     margin: 0;
   }
   .google-gallery .gallery-images,
@@ -760,7 +762,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .gallery-caption figcaption { font-size: .68rem; }
   .google-sidebar-card { top: 29%; left: .65rem; width: 5.2rem; }
   .google-sidebar-card > span { display: none; }
-  .feature-orbit-card { position: absolute; top: calc(55% + .7rem); left: 20%; width: 13.5rem; margin: 0; grid-template-columns: 1.65rem 1fr; padding: .55rem .65rem; }
+  .feature-orbit-card { position: absolute; top: calc(var(--mobile-gallery-top, 55%) + .7rem); left: 20%; width: 13.5rem; margin: 0; grid-template-columns: 1.65rem 1fr; padding: .55rem .65rem; }
   .feature-orbit-card > span { width: 1.65rem; height: 1.65rem; }
   .feature-orbit-card strong { font-size: .72rem; }
   .feature-orbit-card small { font-size: .58rem; }
@@ -774,7 +776,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .meta-screen { top: 5%; width: 82%; }
   .meta-trace { bottom: 0; }
   .project-science .project-copy { padding-right: 0; }
-  .science-gallery { top: 55%; right: 0; width: 100%; height: 42%; }
+  .science-gallery { top: var(--mobile-gallery-top, 55%); right: 0; width: 100%; height: calc(97% - var(--mobile-gallery-top, 55%)); }
   .science-caption { grid-template-columns: auto 1fr; bottom: -1.2rem; font-size: .62rem; }
   .science-caption figcaption { font-size: .68rem; }
   .transition { height: 30vh; min-height: 14rem; }
