@@ -711,28 +711,32 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .intro-orbit { top: 29%; right: -30vw; width: 86vw; opacity: .45; }
   .scroll-cue { right: 1.25rem; font-size: .62rem; line-height: 1.4; }
   .project,
-  .project-science { height: auto; }
+  .project-science { height: 360svh; }
   .scene-stage {
-    position: relative;
-    display: flex;
+    position: sticky;
+    display: block;
     min-height: 0;
-    height: auto;
-    flex-direction: column;
-    padding: 7.5rem 1.25rem 2rem;
+    height: 100svh;
+    padding: 0;
   }
   .scene-kicker { top: 5.2rem; left: 1.25rem; right: 1.25rem; }
   .scene-kicker span:last-child { display: none; }
-  .scene-progress { top: 7rem; right: .75rem; width: 7.2rem; }
+  .scene-progress { top: 7rem; right: .9rem; z-index: 20; width: 8.5rem; }
+  .scene-progress-segments button { height: 2.2rem; }
+  .scene-progress-segments button::before { opacity: .42; }
   .project-copy {
-    position: relative;
-    top: auto;
-    left: auto;
-    width: 100%;
+    position: absolute;
+    top: 8.35rem;
+    left: 1.25rem;
+    width: calc(100% - 2.5rem);
     transform: none;
   }
-  .project h2 { font-size: clamp(3rem, 15vw, 4.5rem); }
-  .project-deck { margin-top: 1rem; font-size: .97rem; }
-  .project-actions { margin-top: 1.1rem; }
+  .chapter-label { display: none; }
+  .project h2 { font-size: clamp(2.7rem, 12.5vw, 3.8rem); }
+  .project-subtitle { margin-top: .45rem; font-size: clamp(1.35rem, 6vw, 2rem); }
+  .project-deck { max-width: 94%; margin-top: .7rem; font-size: .86rem; line-height: 1.35; }
+  .project-actions { margin-top: .75rem; gap: .5rem; }
+  .button { min-height: 2.3rem; padding: .5rem .8rem; font-size: .76rem; }
   .google-system,
   .meta-system {
     position: relative;
@@ -743,12 +747,12 @@ button, a { -webkit-tap-highlight-color: transparent; }
     margin: 2rem -1.5rem 0;
   }
   .project-gallery {
-    position: relative;
-    top: auto;
-    right: auto;
-    width: calc(100% + 2.5rem);
-    height: 25rem;
-    margin: 2rem -1.25rem 0;
+    position: absolute;
+    top: 55%;
+    right: 0;
+    width: 100%;
+    height: 42%;
+    margin: 0;
   }
   .google-gallery .gallery-images,
   .meta-gallery .gallery-images { bottom: 2.8rem; border-radius: 0; }
@@ -756,7 +760,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .gallery-caption figcaption { font-size: .68rem; }
   .google-sidebar-card { top: 29%; left: .65rem; width: 5.2rem; }
   .google-sidebar-card > span { display: none; }
-  .feature-orbit-card { position: relative; top: auto; left: auto; align-self: flex-start; width: 13.5rem; margin: -24.3rem 0 20.5rem 24%; grid-template-columns: 1.65rem 1fr; padding: .55rem .65rem; }
+  .feature-orbit-card { position: absolute; top: calc(55% + .7rem); left: 20%; width: 13.5rem; margin: 0; grid-template-columns: 1.65rem 1fr; padding: .55rem .65rem; }
   .feature-orbit-card > span { width: 1.65rem; height: 1.65rem; }
   .feature-orbit-card strong { font-size: .72rem; }
   .feature-orbit-card small { font-size: .58rem; }
@@ -765,21 +769,12 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .console-grid { gap: .45rem; padding: .6rem; }
   .service-node, .metric { transform: scale(.8); }
   .project-evidence {
-    position: relative;
-    right: auto;
-    bottom: auto;
-    left: auto;
-    display: block;
-    width: 100%;
-    max-width: none;
-    margin-top: 1.5rem;
+    display: none;
   }
-  .project-evidence span { display: block; margin-bottom: .35rem; }
-  .project-evidence p { font-size: .68rem; }
   .meta-screen { top: 5%; width: 82%; }
   .meta-trace { bottom: 0; }
   .project-science .project-copy { padding-right: 0; }
-  .science-gallery { top: auto; right: auto; width: calc(100% + 2.5rem); height: 25rem; }
+  .science-gallery { top: 55%; right: 0; width: 100%; height: 42%; }
   .science-caption { grid-template-columns: auto 1fr; bottom: -1.2rem; font-size: .62rem; }
   .science-caption figcaption { font-size: .68rem; }
   .transition { height: 30vh; min-height: 14rem; }
