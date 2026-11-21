@@ -5,3 +5,6 @@ desktop.ini
 portfolio/Thumbs.db
 _tools/postings/node_modules/
 _tools/postings/.local/
+folio/qa/node_modules/
+folio/qa/playwright-report/
+folio/qa/test-results/

@@ -1,0 +1,41 @@
+name: Folio mobile regression
+
+on:
+  push:
+    paths:
+      - 'folio/**'
+      - '.github/workflows/folio-mobile-regression.yml'
+  pull_request:
+    paths:
+      - 'folio/**'
+      - '.github/workflows/folio-mobile-regression.yml'
+  workflow_dispatch:
+
+jobs:
+  responsive-qa:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: folio/qa
+    env:
+      PORTFOLIO_SITE_ROOT: ..
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: folio/qa/package-lock.json
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium firefox webkit
+      - run: npm test
+      - name: Upload failure evidence
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: folio-mobile-regression-evidence
+          path: |
+            folio/qa/test-results
+            folio/qa/playwright-report
+          if-no-files-found: ignore
+          retention-days: 14
