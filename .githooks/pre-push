@@ -1,0 +1,22 @@
+#!/bin/sh
+set -eu
+
+repo_root=$(git rev-parse --show-toplevel)
+
+if [ -d "$repo_root/folio/qa" ]; then
+  qa_dir="$repo_root/folio/qa"
+  export PORTFOLIO_SITE_ROOT=..
+else
+  qa_dir="$repo_root/qa"
+  unset PORTFOLIO_SITE_ROOT || true
+fi
+
+cd "$qa_dir"
+
+if [ ! -d node_modules ]; then
+  npm ci
+fi
+
+npx playwright install chromium firefox webkit
+npm test
+

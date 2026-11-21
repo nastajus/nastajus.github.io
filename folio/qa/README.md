@@ -27,3 +27,5 @@ npm test
 ```
 
 The GitHub Pages repository runs the same suite automatically for changes under `folio/`.
+
+Both local repositories use the tracked `.githooks/pre-push` quality gate. A push is rejected if this suite fails.
