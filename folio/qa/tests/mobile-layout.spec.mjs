@@ -85,7 +85,7 @@ for (const viewport of viewports) {
             expect(layout.imageNaturalWidth).toBeGreaterThan(0);
             expect(layout.captionTop).toBeGreaterThanOrEqual(0);
             expect(layout.captionBottom).toBeLessThanOrEqual(layout.viewportHeight + 1);
-            expect(layout.objectFit).toBe('cover');
+            expect(layout.objectFit).toBe('contain');
           });
         }
       });

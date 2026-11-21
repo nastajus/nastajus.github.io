@@ -5,7 +5,7 @@ This Playwright suite protects the sticky mobile project scenes against the fail
 - feature narrative overlapping the active gallery;
 - section kicker overlapping the feature narrative;
 - galleries or captions leaving the viewport;
-- images becoming too small, unloaded, inset, or horizontally cropped by layout;
+- images becoming too small, unloaded, or cropped by fill behavior;
 - horizontal document overflow;
 - browser-engine differences under enlarged text.
 
