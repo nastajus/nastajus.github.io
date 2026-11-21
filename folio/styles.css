@@ -536,6 +536,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .gallery-image.is-active { opacity: 1; transform: none; }
 .gallery-caption {
   position: absolute;
+  z-index: 4;
   right: clamp(1.25rem, 6vw, 6rem);
   bottom: 5rem;
   display: grid;
@@ -552,6 +553,17 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .google-gallery .gallery-images,
 .meta-gallery .gallery-images { bottom: 3.5rem; border-radius: 1rem; }
 .google-gallery .gallery-images { box-shadow: 0 1.3rem 3rem rgba(25,54,59,.16); }
+.google-gallery .gallery-images:has(.gallery-image-caption-fade.is-active)::after {
+  content: '';
+  position: absolute;
+  z-index: 3;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 46%;
+  pointer-events: none;
+  background: linear-gradient(to bottom, rgba(237,241,241,0), rgba(237,241,241,.74) 68%, #edf1f1 100%);
+}
 .meta-gallery .gallery-images { box-shadow: 0 1.3rem 3rem rgba(0,0,0,.28); }
 .google-sidebar-card {
   position: absolute;
