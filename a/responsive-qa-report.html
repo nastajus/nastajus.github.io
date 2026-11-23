@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Responsive QA Tooling Report</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #172127;
+      --muted: #5d6970;
+      --paper: #f5f7f6;
+      --card: #ffffff;
+      --line: #d7dfdc;
+      --green: #14765d;
+      --green-soft: #dff3eb;
+      --amber: #8a5b00;
+      --amber-soft: #fff0c8;
+      --blue: #245ba8;
+    }
+    * { box-sizing: border-box; }
+    html { background: var(--paper); }
+    body {
+      margin: 0;
+      background:
+        linear-gradient(135deg, rgba(36,91,168,.07), transparent 28rem),
+        var(--paper);
+      color: var(--ink);
+      font: 16px/1.55 ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    main { width: min(72rem, calc(100% - 2rem)); margin: 0 auto; padding: clamp(2rem, 6vw, 5rem) 0 5rem; }
+    header { max-width: 52rem; margin-bottom: 2rem; }
+    .eyebrow { margin: 0 0 .75rem; color: var(--blue); font-size: .78rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+    h1 { margin: 0; font-size: clamp(2.35rem, 7vw, 5rem); letter-spacing: -.055em; line-height: .95; }
+    .lead { max-width: 46rem; margin: 1.25rem 0 0; color: var(--muted); font-size: clamp(1rem, 2vw, 1.2rem); }
+    .status-grid, .report-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+    .status, section { border: 1px solid var(--line); border-radius: 1rem; background: rgba(255,255,255,.9); }
+    .status { padding: 1.15rem; }
+    .status strong { display: block; margin-bottom: .2rem; }
+    .status p { margin: 0; color: var(--muted); }
+    .status-pass { border-color: #a8d8c5; background: var(--green-soft); }
+    .status-pending { border-color: #ead28d; background: var(--amber-soft); }
+    section { margin-top: 1rem; padding: clamp(1.25rem, 3vw, 2rem); }
+    h2 { margin: 0 0 1rem; font-size: clamp(1.35rem, 3vw, 2rem); letter-spacing: -.025em; }
+    h3 { margin: 1.25rem 0 .35rem; font-size: 1rem; }
+    p { margin: .65rem 0; }
+    ul, ol { margin: .75rem 0 0; padding-left: 1.2rem; }
+    li + li { margin-top: .45rem; }
+    table { width: 100%; border-collapse: collapse; font-size: .95rem; }
+    th, td { padding: .75rem; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    th { color: var(--muted); font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; }
+    tr:last-child td { border-bottom: 0; }
+    code, pre { font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace; }
+    code { padding: .12rem .32rem; border-radius: .3rem; background: #e8edeb; font-size: .9em; }
+    pre { overflow-x: auto; margin: .8rem 0 0; padding: 1rem; border-radius: .7rem; background: #172127; color: #eef5f2; font-size: .86rem; }
+    .metric { font-size: clamp(2rem, 5vw, 3.6rem); font-weight: 780; letter-spacing: -.06em; line-height: 1; }
+    .metric-label { margin-top: .35rem; color: var(--muted); }
+    .note { padding-left: 1rem; border-left: .25rem solid var(--blue); color: var(--muted); }
+    footer { margin-top: 2rem; color: var(--muted); font-size: .85rem; }
+    @media (max-width: 700px) {
+      .status-grid, .report-grid { grid-template-columns: 1fr; }
+      main { width: min(100% - 1.25rem, 72rem); }
+      th, td { padding: .65rem .4rem; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">Standalone engineering report</p>
+      <h1>Responsive QA tooling</h1>
+      <p class="lead">A plain-language record of the automated checks protecting the portfolio’s mobile scrollytelling layout.</p>
+    </header>
+
+    <div class="status-grid" aria-label="Current tooling status">
+      <article class="status status-pass">
+        <strong>Local quality gate: operational</strong>
+        <p>Every local push runs the complete responsive suite and is rejected when a check fails.</p>
+      </article>
+      <article class="status status-pending">
+        <strong>Cloud workflow: configured, runner unavailable</strong>
+        <p>GitHub Actions currently refuses to start custom runners because the account reports a billing lock. Pages deployment remains operational.</p>
+      </article>
+    </div>
+
+    <div class="report-grid">
+      <section>
+        <h2>Latest validation</h2>
+        <div class="metric">144</div>
+        <div class="metric-label">responsive states checked per complete run</div>
+        <table>
+          <tbody>
+            <tr><th>Result</th><td>Passed locally and through the publishing repository’s pre-push gate</td></tr>
+            <tr><th>Date</th><td>November 21, 2026</td></tr>
+            <tr><th>Engines</th><td>Chromium, Firefox and WebKit</td></tr>
+            <tr><th>Projects</th><td>Google Operations Hub, Meta and Scientific Visualizations</td></tr>
+            <tr><th>Frames</th><td>All four feature images in every project</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Coverage matrix</h2>
+        <table>
+          <thead><tr><th>Dimension</th><th>Coverage</th></tr></thead>
+          <tbody>
+            <tr><td>Browser engines</td><td>3</td></tr>
+            <tr><td>Portrait viewports</td><td>390 × 844 and 430 × 932</td></tr>
+            <tr><td>Font conditions</td><td>100% and 150%</td></tr>
+            <tr><td>Project scenes</td><td>3</td></tr>
+            <tr><td>Frames per scene</td><td>4</td></tr>
+          </tbody>
+        </table>
+        <p class="note">The enlarged-font condition targets the browser accessibility setting that previously caused Chrome overlap and Firefox image loss.</p>
+      </section>
+    </div>
+
+    <section>
+      <h2>What the suite prevents</h2>
+      <ul>
+        <li>Feature text overlapping or hiding the active image.</li>
+        <li>Section labels colliding with feature titles.</li>
+        <li>Images shrinking into a narrow sliver or disappearing.</li>
+        <li>Mobile artwork being cropped to fill the gallery instead of preserving the full composition.</li>
+        <li>Captions leaving the visible viewport.</li>
+        <li>Horizontal document overflow.</li>
+        <li>Lazy-loaded images being treated as ready before they decode.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>How the protection works</h2>
+      <ol>
+        <li><strong>Playwright opens the site</strong> in three independent rendering engines.</li>
+        <li><strong>Each project and frame is activated</strong> at two portrait sizes and two font scales.</li>
+        <li><strong>Geometry assertions measure the page</strong>, verifying that narrative, image and caption regions do not collide or escape the viewport.</li>
+        <li><strong>Failure evidence is retained</strong> as a screenshot and execution trace.</li>
+        <li><strong>A tracked Git pre-push hook runs the suite</strong> before deployment changes can leave the machine.</li>
+        <li><strong>A GitHub Actions workflow repeats the suite</strong> when cloud runners are available.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Run the report suite</h2>
+      <p>From the portfolio source directory:</p>
+      <pre>qa-mobile.cmd</pre>
+      <p>Or run the underlying commands:</p>
+      <pre>cd qa
+npm ci
+npx playwright install chromium firefox webkit
+npm test</pre>
+      <h3>Where the implementation lives</h3>
+      <p><code>qa/tests/mobile-layout.spec.mjs</code> contains the assertions. <code>qa/playwright.config.mjs</code> defines engines, retries and failure artifacts. <code>.githooks/pre-push</code> enforces the local gate.</p>
+    </section>
+
+    <section>
+      <h2>Known limits</h2>
+      <p>Automated rendering engines catch layout regressions consistently, but they are not a complete substitute for physical-device checks. Android Chrome and Firefox may apply manufacturer-specific font scaling, browser chrome and safe-area behavior. A short real-device smoke test remains appropriate before major visual releases.</p>
+    </section>
+
+    <footer>This document is intentionally disconnected from the portfolio interface and must be opened directly.</footer>
+  </main>
+</body>
+</html>
