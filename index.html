@@ -19,8 +19,9 @@
     <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
       <a href="#featured">Selected work</a>
       <a href="/work/">All projects</a>
+      <a href="/experience/">Experience</a>
       <a href="/folio/">Visual folio</a>
-      <a href="/resume/qr/">Résumé</a>
+      <a href="/resume/">Résumé</a>
       <a href="https://github.com/nastajus?tab=repositories">GitHub</a>
       <a class="nav-contact" href="mailto:ian.nastajus@gmail.com">Contact</a>
     </nav>
@@ -35,7 +36,7 @@
         <div class="action-row">
           <a class="button primary" href="#featured">Explore selected work</a>
           <a class="button" href="/work/">Browse every project</a>
-          <a class="text-link" href="/resume/qr/">Open résumé</a>
+          <a class="text-link" href="/resume/">Open résumé</a>
         </div>
       </div>
       <aside class="hero-index" aria-label="Portfolio scope">
@@ -57,7 +58,7 @@
 
     <section id="featured" class="section shell">
       <header class="section-heading">
-        <div><p class="eyebrow">Selected engineering work</p><h2>Three different kinds of system.</h2></div>
+        <div><p class="eyebrow">Selected engineering work</p><h2>Four different kinds of system.</h2></div>
         <p>Each project is presented by what it does, what is available to inspect, and where the technical evidence lives.</p>
       </header>
 
@@ -92,6 +93,21 @@
           </div>
         </article>
 
+        <article class="feature-card feature-memory">
+          <div class="feature-image"><img src="home-assets/memory-bloom.png" alt="Memory Bloom detailed memory-pressure investigator grouping Windows, Firefox, and unresolved browser-tab evidence" width="780" height="600"></div>
+          <div class="feature-body">
+            <div class="project-meta"><span>Public source</span><span>Windows desktop application</span></div>
+            <h3>Memory Bloom</h3>
+            <p class="project-purpose">A quiet memory-pressure companion that stays out of the way until Windows needs attention, then expands into an evidence-led process investigator with history, grouping, and explicit uncertainty.</p>
+            <dl class="fact-grid">
+              <div><dt>Engineering focus</dt><dd>Low-friction monitoring, process attribution, pressure history, careful browser-tab inference</dd></div>
+              <div><dt>Stack</dt><dd>C#, .NET, WPF/XAML, Windows diagnostics, optional local Firefox companion</dd></div>
+              <div><dt>Evidence</dt><dd>Public source, architecture, screenshots, release notes, privacy and inference boundaries</dd></div>
+            </dl>
+            <div class="project-actions"><a class="button primary" href="https://github.com/nastajus/memory-bloom">View repository</a></div>
+          </div>
+        </article>
+
         <article class="feature-card">
           <div class="feature-image"><img src="home-assets/sunwalks.webp" alt="SunWalks Toronto scene showing buildings, sunlight, shadows, map labels, and a walking environment" width="1600" height="900"></div>
           <div class="feature-body">
@@ -116,6 +132,7 @@
           <a class="button" href="/work/">Open complete directory</a>
         </header>
         <div class="project-list">
+          <article class="project-row"><div><span class="status source">Public source</span><h3>Memory Bloom</h3></div><p>A quiet Windows memory-pressure companion that expands from a compact signal into process, history, and browser-tab evidence when investigation is needed.</p><div class="tags"><span>C#</span><span>.NET</span><span>WPF</span><span>Windows diagnostics</span></div><a href="https://github.com/nastajus/memory-bloom">Repository</a></article>
           <article class="project-row"><div><span class="status docs">Documentation showcase</span><h3>Note Foundry</h3></div><p>Microsoft Graph extraction and report-building infrastructure that preserves OneNote source material while producing normalized data, timelines, local browsing, and linked research or technical reports.</p><div class="tags"><span>Python</span><span>Microsoft Graph</span><span>MSAL</span><span>PWA</span></div><a href="https://github.com/nastajus/note-foundry">Documentation</a></article>
           <article class="project-row"><div><span class="status source">Functional core</span><h3>OneNote PDF Indexer</h3></div><p>A private research browser that turns OneNote notebooks containing embedded PDFs into a searchable local paper library with source-preserving results and exact-page reopening.</p><div class="tags"><span>Python</span><span>SQLite</span><span>Graph</span><span>PDF.js</span></div><a href="https://github.com/nastajus/onenote_pdf_indexer">Source and setup</a></article>
           <article class="project-row"><div><span class="status demo">Live demo</span><h3>Emotion Wheel</h3></div><p>A dependency-free, multilingual SVG interface for navigating a three-level emotion vocabulary with zoom, pan, selection, definitions, localization, and print support.</p><div class="tags"><span>SVG</span><span>JavaScript</span><span>Localization</span></div><a href="https://nastajus.github.io/emotion-wheel/">Open demo</a></article>
@@ -124,12 +141,28 @@
       </div>
     </section>
 
+    <section class="experience-preview" aria-labelledby="experience-preview-title">
+      <div class="shell experience-preview-grid">
+        <header>
+          <p class="eyebrow">Professional experience</p>
+          <h2 id="experience-preview-title">Engineering across immersive media, payments, and public systems.</h2>
+          <p>Selected employment experience, organized around contribution areas and technical context rather than a dated timeline.</p>
+          <a class="button light" href="/experience/">Explore experience</a>
+        </header>
+        <div class="employer-preview-list">
+          <a href="/experience/#secret-location"><span>01</span><strong>Secret Location</strong><small>Full-stack software engineering · VR and immersive platforms</small></a>
+          <a href="/experience/#paymentus"><span>02</span><strong>Paymentus</strong><small>Full-stack software engineering · payment and account integrations</small></a>
+          <a href="/experience/#ontario-health"><span>03</span><strong>Ontario Ministry of Health</strong><small>Programmer analyst co-op · health-information and operational systems</small></a>
+        </div>
+      </div>
+    </section>
+
     <section class="record shell">
       <div class="record-copy">
         <p class="eyebrow">Professional record</p>
-        <h2>Résumé formats for different contexts.</h2>
-        <p>The résumé collection includes a general software-engineering résumé along with focused versions for recent work, QA, administration, retail, and Blender or visualization experience.</p>
-        <div class="action-row"><a class="button primary" href="/resume/qr/">Browse résumé versions</a><a class="text-link" href="/resume/IanNastajusResume.pdf">Open general PDF</a></div>
+        <h2>A readable professional record, with focused PDFs when needed.</h2>
+        <p>The HTML résumé provides a concise overview of engineering experience, capabilities, projects, and education. A separate selector preserves the focused PDF variants.</p>
+        <div class="action-row"><a class="button primary" href="/resume/">Read HTML résumé</a><a class="text-link" href="/resume/qr/">Browse focused PDFs</a></div>
       </div>
       <aside class="record-note">
         <p class="panel-label">What this homepage does not claim</p>
@@ -156,7 +189,7 @@
   </main>
 
   <footer class="site-footer">
-    <div class="shell footer-inner"><div><strong>Ian Nastajus</strong><span>Software Engineer · Toronto, Canada</span></div><nav aria-label="Footer navigation"><a href="mailto:ian.nastajus@gmail.com">Email</a><a href="https://github.com/nastajus?tab=repositories">GitHub</a><a href="/resume/qr/">Résumé</a><a href="/folio/">Visual folio</a></nav></div>
+    <div class="shell footer-inner"><div><strong>Ian Nastajus</strong><span>Software Engineer · Toronto, Canada</span></div><nav aria-label="Footer navigation"><a href="/experience/">Experience</a><a href="mailto:ian.nastajus@gmail.com">Email</a><a href="https://github.com/nastajus?tab=repositories">GitHub</a><a href="/resume/">Résumé</a><a href="/folio/">Visual folio</a></nav></div>
   </footer>
 </body>
 </html>
