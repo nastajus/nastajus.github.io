@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158182995-1"></script>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-158182995-1');
+    </script>
+
+
+    <link rel="stylesheet" type="text/css" href="nastajus_site_theme.css">
+    <meta name="viewport" content="width=device-width">
+    <meta charset="UTF-8">
+    <title>Ian Nastajus : Software Engineer</title>
+    <script src="https://use.fontawesome.com/7010a79c9c.js"></script>
+</head>
+<body>
+
+<div id="fillWindow">
+<div id="mainContainer">
+
+    <div class="section" style="padding-top: 0">
+        <div class="partWidth l">
+            <h1>Ian Nastajus</h1>
+            <h3 style="font-weight: normal">Software Engineer</h3>
+        </div>
+        <div class="partWidth r">
+            <h1><i class="fad fa fa-mobile" aria-hidden="true"></i><a href="tel:416-985-6748">416-985-6748</a></h1>
+            <h3 style="font-weight: normal"><i class="fad fa fa-envelope-open-o" aria-hidden="true"></i><a href="ian.nastajus@gmail.com" style="text-decoration: none;">ian.nastajus@gmail.com</a></h3>
+        </div>
+    </div>
+    <div class="section" style="padding: 0">
+        <div class="partWidth" style="border-right: ridge; padding: 25px 0">
+            <div class="partsWidth">
+                <div class="profile"></div>
+            </div>
+        </div>
+        <div class="partWidth" style="padding: 25px 0; display: flex; flex-direction: column; justify-content: space-evenly; height:250px">
+            <div class="biglink">
+                <i class="fad fa fa-file-pdf-o" aria-hidden="true"></i><a href="resume/IanNastajusResume.pdf">Resume</a>
+            </div>
+            <div class="biglink">
+                <i class="fad fa fa-briefcase" aria-hidden="true"></i><a href="portfolio/index.html">Portfolio</a>
+            </div>
+        </div>
+    </div>
+    <div class="section">        
+        <u>Personality sound-bite:</u><br/> <span></span>
+        <!-- onclick="changeBlurb(true)" -->
+    </div>
+
+</div>
+
+<script type="text/javascript">
+
+    window.onload = function() {
+        changeBlurb();
+    }
+
+    function changeBlurb(requestStop) {
+
+        var spanElem = document.getElementsByTagName("span")[0];
+        var blurb = randomText();
+        while (blurb == spanElem.textContent) {
+            blurb = randomText();
+        }
+        spanElem.textContent = blurb;
+
+        var newtime = 6000;
+        if (!requestStop) {
+            setTimeout(changeBlurb, newtime);
+        }
+    }
+
+    function randomText() {
+        var items = [
+            "Enjoy health-centric activities",
+            "Pursued machine learning side quest",
+            "Practice French in my spare time",
+            "Am vegetarian-ish",
+            "Hobby of game jams & hackathons",
+            "Delight in one-on-one tutorial sessions, and freelance work",
+            "Intrigued by server-side dev & mobile apps, like microsystems,  api design, and more.",
+            "Enjoy tweaking settings, fiddling, optimizing."
+        ]
+
+        var item = items[Math.floor(Math.random() * items.length)]
+        return item;
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158182995-1"></script>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-158182995-1');
+    </script>
+
+
+    <link rel="stylesheet" type="text/css" href="../nastajus_site_theme.css">
+    <link href="https://rawgithub.com/noelboss/featherlight/master/release/featherlight.min.css" type="text/css" rel="stylesheet" title="Featherlight Styles" />
+    <!--<link-->
+            <!--href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css"-->
+            <!--rel="stylesheet"  type='text/css'>-->
+
+    <meta name="viewport" content="width=device-width">
+    <meta charset="UTF-8">
+    <title>Experiments | Nastajus</title>
+    <script src="https://use.fontawesome.com/7010a79c9c.js"></script>
+
+
+    <!-- hacky quick upload, todo fix remove later -->
+    <style>
+    .crop {
+        width: 350px;
+        height: 195px;
+        overflow: hidden;
+    }
+
+    .crop img {
+        width: 310px;
+        height: 280px;
+        margin: 0 0 0 0;
+    }
+
+    </style>
+
+</head>
+<body>
+
+<div id="fillWindow">
+<div id="mainContainer">
+
+    <div class="section">
+        
+        <!-- <h1><a href="#challenges" name="challenges">Challenges</a></h1> -->
+        <h1>
+            <i class="fad fa fa-flask" aria-hidden="true"></i>
+            <a href="#experiments" name="experiments">Experiments</a>
+            <i class="fad fa fa-wrench" aria-hidden="true"></i>
+        </h1>
+        
+    </div>
+
+    <div class="section">
+        Be advised: <br>
+        These are just fun side projects, or coding challenges, or for learning.<br>
+    </div>
+
+
+    <div class="section">
+        <h2><a href="#wv" name="wv">Simple Employee Expenses front/back</a></h2>
+        <div class="partWidth">
+            <a href="#" data-featherlight="#wv2"><img src="../img/p/wv2.gif" class="pic" id="wv2"/></a>
+        </div>
+
+        <div class="description" style="overflow: hidden;">
+            <ul style="text-align: justify;">
+                <li>Loads employee expenses via a <a href="https://en.wikipedia.org/wiki/Comma-separated_values" title="Comma-separated values">CSV</a> file.</li>
+                <li>Calculates montly expense totals, and fetches from database using both raw SQL/ORM methods, by providing RESTful API endpoints (backend). </li>
+                <li>Accepts user input via rudimentary web form for upload, and presents back data to clientside in colored tables (frontend).</li>
+                <li>Progressed from research to release over a few days to a bug-free prototype.</li>
+                <li><img class="icon" src="../img/youtube.png"> <b>Demo:</b> <a href="https://youtu.be/NlWhe2imk2s">video here</a></li>
+                <li>
+                    <img class="icon" src="../img/git.png"> <b>Code:</b> <a href="https://github.com/nastajus/wvchallenge-nodejs">GitHub repository here</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+
+    <div class="section">
+        <h2><a href="#lr" name="lr">Linear Regression Plotter</a></h2>
+        <div class="partWidth">
+            <a href="#" data-featherlight="#lr1"><img src="../img/p/lr1.png" class="pic" id="lr1"/></a>
+        </div>
+
+        <div class="description" style="overflow: hidden">
+            <ul style="text-align: justify;">
+                <li>Fun project inspired by machine learning classes with friends.</li>
+                <li>Created canvas drawing tool, allowing users to interact with DOM by adding new points/zoom.</li>
+                <li>Cleanly coded by sectioning off code into isolated small functions, and appropriate semantic modules.</li>
+                <li><em>(Temporary colors used for debugging positioning of CSS when I stopped development.)</em></li>
+                <li><img class="icon" src="../img/play.png"> <b>Live demo:</b> <a href="https://nastajus.github.io/projects/web/plotter/">running here</a></li>
+                <li>
+                    <!--<img class="icon" src="../img/youtube.png"> <b>Demo: </b> <a href="https://www.youtube.com/watch?v= ">video here</a> |-->
+                    <img class="icon" src="../img/git.png"> <b>Code:</b> <a href="https://github.com/nastajus/javascriptApp5-canvas">GitHub repository here</a>
+                </li>
+                <!--<li><b>Demo:</b> <a href="">video here</a>.</li>-->
+            </ul>
+
+        </div>
+    </div>
+
+
+
+
+    <div class="section">
+        <h2><a href="#nc" name="nc">Nutrient Check</a></h2>
+        <div class="partWidth">
+            <a href="#" data-featherlight="#do1"><img src="../img/p/do1.png" class="pic" id="do1"/></a>
+        </div>
+
+        <div class="description" style="overflow: hidden">
+            <ul style="text-align: justify;">
+                <li>Models the nutrition hierarchy of macronutrients, minerals, vitamins, etc. down to specific food items Soups, Bagels, Donuts.</li>
+                <li>Designed to provide assessment of diet based on Dietary Reference Intakes, allowing user input of foods eaten.</li>
+                <li><img class="icon" src="../img/git.png"> <b>Code:</b> <a href="https://github.com/nastajus/Donut">GitHub repository here</a></li>
+                <!--<li><b>Demo:</b> <a href="">video here</a>.</li>-->
+            </ul>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <div style="text-align: center; margin: 40px;">
+        <i class="fad fa fa-linkedin" aria-hidden="true"></i><a href="http://www.linkedin.com/in/nastajus">linkedin.com/in/nastajus</a><i class="ifad fad fa fa-linkedin" aria-hidden="true"></i>
+    </div>
+
+    <div style="text-align: center; margin: 40px;">
+        <i class="fad fa fa-github" aria-hidden="true"></i><a href="https://github.com/nastajus">github.com/nastajus</a><i class="ifad fad fa fa-github" aria-hidden="true"></i>
+    </div>
+
+    <div style="text-align: center; margin: 40px;">
+        <i class="fad fa fa-file-pdf-o" aria-hidden="true"></i><a href="../resume/IanNastajusResume.pdf">Resume</a><i class="ifad fad fa fa-file-pdf-o" aria-hidden="true"></i>
+    </div>
+
+    
+
+
+</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<script src="https://rawgithub.com/noelboss/featherlight/master/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+</body>
+</html>
