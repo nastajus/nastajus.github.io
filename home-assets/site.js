@@ -33,3 +33,66 @@ if (filterButtons.length && directoryCards.length) {
   filterButtons.forEach((button) => button.addEventListener('click', () => applyFilter(button.dataset.filter)));
   applyFilter('all');
 }
+
+const zoomableImages = [...document.querySelectorAll('.directory-card > img')];
+
+if (zoomableImages.length) {
+  const lightbox = document.createElement('div');
+  lightbox.className = 'image-lightbox';
+  lightbox.hidden = true;
+  lightbox.setAttribute('role', 'dialog');
+  lightbox.setAttribute('aria-modal', 'true');
+  lightbox.setAttribute('aria-label', 'Expanded project image');
+  lightbox.innerHTML = `
+    <div class="lightbox-dialog">
+      <button class="lightbox-close" type="button" aria-label="Close expanded image">×</button>
+      <img alt="">
+      <p class="lightbox-caption"></p>
+    </div>`;
+  document.body.append(lightbox);
+
+  const expandedImage = lightbox.querySelector('img');
+  const caption = lightbox.querySelector('.lightbox-caption');
+  const closeButton = lightbox.querySelector('.lightbox-close');
+  let opener = null;
+
+  const closeLightbox = () => {
+    if (lightbox.hidden) return;
+    lightbox.hidden = true;
+    document.body.classList.remove('lightbox-open');
+    expandedImage.removeAttribute('src');
+    if (opener) opener.focus();
+  };
+
+  const openLightbox = (button, image) => {
+    opener = button;
+    expandedImage.src = image.currentSrc || image.src;
+    expandedImage.alt = image.alt;
+    caption.textContent = image.alt;
+    lightbox.hidden = false;
+    document.body.classList.add('lightbox-open');
+    closeButton.focus();
+  };
+
+  zoomableImages.forEach((image) => {
+    const button = document.createElement('button');
+    button.className = 'image-zoom';
+    button.type = 'button';
+    button.setAttribute('aria-label', `View larger: ${image.alt}`);
+    image.before(button);
+    button.append(image);
+    button.addEventListener('click', () => openLightbox(button, image));
+  });
+
+  closeButton.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (event) => {
+    if (event.target === lightbox) closeLightbox();
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && !lightbox.hidden) closeLightbox();
+    if (event.key === 'Tab' && !lightbox.hidden) {
+      event.preventDefault();
+      closeButton.focus();
+    }
+  });
+}

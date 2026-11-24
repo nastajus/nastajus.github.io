@@ -125,7 +125,10 @@ button { font: inherit; }
 .directory-cards { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 22px; }
 .directory-card { border: 1px solid var(--line); background: var(--surface); }
 .directory-card[hidden] { display: none; }
-.directory-card > img { aspect-ratio: 16/8; object-fit: cover; object-position: center; border-bottom: 1px solid var(--line); }
+.image-zoom { width: 100%; display: block; padding: 0; border: 0; border-bottom: 1px solid var(--line); background: var(--dark); cursor: zoom-in; overflow: hidden; }
+.image-zoom img { aspect-ratio: 16/8; object-fit: cover; object-position: center; transition: transform 180ms ease; }
+.image-zoom:hover img, .image-zoom:focus-visible img { transform: scale(1.018); }
+.image-zoom:focus-visible { outline: 4px solid var(--teal); outline-offset: -4px; }
 .directory-card-body { padding: 28px; }
 .directory-card h3 { font-size: 2.4rem; }
 .directory-card p { min-height: 76px; color: var(--muted); }
@@ -195,7 +198,7 @@ button { font: inherit; }
 .experience-close { padding-block: 90px; display: flex; justify-content: space-between; gap: 40px; align-items: end; }
 .experience-close h2 { margin: 0; max-width: 780px; font-size: clamp(2.2rem,4.5vw,4.8rem); line-height: 1; letter-spacing: -.05em; }
 
-.resume-shell { padding-block: 70px 100px; }
+.resume-shell { max-width: 1180px; padding-block: 70px 100px; }
 .resume-hero { display: flex; justify-content: space-between; gap: 50px; align-items: end; padding-bottom: 42px; border-bottom: 3px solid var(--ink); }
 .resume-hero h1 { margin: 0; font-size: clamp(3.5rem,8vw,8rem); line-height: .88; letter-spacing: -.07em; }
 .resume-title { margin: 22px 0 0; color: var(--muted); font-size: 1.1rem; }
@@ -218,6 +221,15 @@ button { font: inherit; }
 .resume-aside p { color: var(--muted); }
 .resume-downloads { display: grid; gap: 16px; }
 .resume-downloads h2 { margin-bottom: 4px; }
+
+body.lightbox-open { overflow: hidden; }
+.image-lightbox { position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; padding: clamp(18px,4vw,56px); background: rgba(3,9,13,.9); }
+.image-lightbox[hidden] { display: none; }
+.lightbox-dialog { position: relative; width: min(94vw,1500px); height: min(90vh,1000px); display: grid; grid-template-rows: minmax(0,1fr) auto; background: #081116; box-shadow: 0 24px 90px rgba(0,0,0,.55); }
+.lightbox-dialog img { width: 100%; height: 100%; min-height: 0; padding: clamp(12px,2vw,28px); object-fit: contain; }
+.lightbox-caption { margin: 0; padding: 14px 72px 16px 20px; color: #d6e0e3; border-top: 1px solid #344249; font-size: .9rem; }
+.lightbox-close { position: absolute; top: 12px; right: 12px; z-index: 1; width: 48px; height: 48px; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.7); border-radius: 50%; background: rgba(3,9,13,.88); color: white; cursor: pointer; font-size: 1.6rem; line-height: 1; }
+.lightbox-close:hover, .lightbox-close:focus-visible { background: white; color: var(--ink); outline: none; }
 
 @media (max-width: 980px) {
   .site-header { padding-inline: 24px; }
@@ -273,6 +285,9 @@ button { font: inherit; }
   .directory-card h3 { font-size: 2.15rem; }
   .directory-card p { min-height: 0; }
   .directory-card dl div { grid-template-columns: 1fr; gap: 4px; }
+  .image-lightbox { padding: 8px; }
+  .lightbox-dialog { width: 100%; height: min(88vh,900px); }
+  .lightbox-caption { padding-left: 14px; font-size: .82rem; }
   .employer-preview-list a { min-height: 112px; grid-template-columns: 34px 1fr; gap: 14px; }
   .employer-preview-list small { grid-column: 2; margin-top: -24px; padding-bottom: 18px; }
   .experience-intro, .employer-index { grid-template-columns: 1fr; }
