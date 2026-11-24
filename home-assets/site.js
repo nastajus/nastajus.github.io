@@ -1,5 +1,27 @@
-const menuButton = document.querySelector('.menu-button');
 const siteNav = document.querySelector('.site-nav');
+const primaryNavigation = [
+  { label: 'Selected work', href: '/#featured' },
+  { label: 'All projects', href: '/work/', currentPath: '/work/' },
+  { label: 'Experience', href: '/experience/', currentPath: '/experience/' },
+  { label: 'Visual folio', href: '/folio/' },
+  { label: 'Résumé', href: '/resume/', currentPath: '/resume/' },
+  { label: 'GitHub', href: 'https://github.com/nastajus?tab=repositories' },
+  { label: 'Contact', href: 'mailto:ian.nastajus@gmail.com', className: 'nav-contact' }
+];
+
+if (siteNav) {
+  const currentPath = window.location.pathname.replace(/\/index\.html$/, '/');
+  siteNav.replaceChildren(...primaryNavigation.map((item) => {
+    const link = document.createElement('a');
+    link.textContent = item.label;
+    link.href = item.href;
+    if (item.className) link.className = item.className;
+    if (item.currentPath === currentPath) link.setAttribute('aria-current', 'page');
+    return link;
+  }));
+}
+
+const menuButton = document.querySelector('.menu-button');
 
 if (menuButton && siteNav) {
   menuButton.addEventListener('click', () => {
