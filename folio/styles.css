@@ -54,6 +54,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   background: rgba(8,10,15,.88);
 }
 .monogram {
+  position: relative;
   display: grid;
   place-items: center;
   width: 2.6rem;
@@ -64,6 +65,30 @@ button, a { -webkit-tap-highlight-color: transparent; }
   font-size: .78rem;
   font-weight: 800;
   letter-spacing: .08em;
+}
+.monogram::after {
+  content: attr(data-home-label);
+  position: absolute;
+  left: calc(100% + .75rem);
+  padding: .38rem .55rem;
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 999px;
+  color: rgba(255,255,255,.82);
+  background: rgba(8,10,15,.94);
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  line-height: 1;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(-.3rem);
+  pointer-events: none;
+  transition: opacity .18s ease, transform .18s ease;
+}
+.monogram:hover::after,
+.monogram:focus-visible::after {
+  opacity: 1;
+  transform: none;
 }
 .project-nav { display: flex; justify-content: center; gap: clamp(.7rem, 2vw, 2rem); }
 .project-nav a {
