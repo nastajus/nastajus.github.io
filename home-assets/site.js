@@ -56,7 +56,7 @@ if (filterButtons.length && directoryCards.length) {
   applyFilter('all');
 }
 
-const zoomableImages = [...document.querySelectorAll('.directory-card > img')];
+const zoomableImages = [...document.querySelectorAll('.directory-card > img, .feature-image > img')];
 
 if (zoomableImages.length) {
   const lightbox = document.createElement('div');
