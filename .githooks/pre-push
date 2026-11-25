@@ -6,6 +6,8 @@ repo_root=$(git rev-parse --show-toplevel)
 if [ -d "$repo_root/folio/qa" ]; then
   qa_dir="$repo_root/folio/qa"
   export PORTFOLIO_SITE_ROOT=..
+  export PORTFOLIO_QA_PORT=4397
+  export PORTFOLIO_QA_REUSE_SERVER=false
 else
   qa_dir="$repo_root/qa"
   unset PORTFOLIO_SITE_ROOT || true

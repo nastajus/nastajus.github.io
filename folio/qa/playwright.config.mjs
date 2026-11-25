@@ -22,7 +22,7 @@ export default defineConfig({
   webServer: {
     command: 'node server.mjs',
     url: baseURL,
-    reuseExistingServer: !process.env.CI,
+    reuseExistingServer: process.env.PORTFOLIO_QA_REUSE_SERVER !== 'false' && !process.env.CI,
     timeout: 20_000
   },
   projects: [
