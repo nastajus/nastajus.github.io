@@ -140,8 +140,8 @@ button { font: inherit; }
 .directory-card.text-card .directory-card-body { display: flex; flex: 1; flex-direction: column; justify-content: center; }
 .filter-result { margin: 18px 0 0; color: var(--muted); font-size: .8rem; }
 
-.feature-memory .feature-image { padding: clamp(18px,3vw,42px); display: grid; place-items: center; background: #10191d; }
-.feature-memory .feature-image img { height: auto; max-height: 100%; object-fit: contain; border: 1px solid #df9276; border-radius: 18px; box-shadow: 0 28px 70px rgba(0,0,0,.32); }
+.feature-memory .feature-image { padding: 0; display: block; background: #10191d; }
+.feature-memory .feature-image img { width: 100%; height: 100%; max-height: none; object-fit: cover; object-position: 60% center; border: 0; border-radius: 0; box-shadow: none; }
 .memory-card > img { object-fit: contain; padding: 18px; background: #10191d; }
 
 .experience-preview { padding-block: clamp(70px,9vw,120px); background: #101820; color: white; }
