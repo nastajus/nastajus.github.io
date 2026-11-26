@@ -70,7 +70,7 @@ button { font: inherit; }
 .feature-card:nth-child(even) .feature-image { order: 2; }
 .feature-image { min-height: 420px; overflow: hidden; background: var(--dark); }
 .feature-image img { height: 100%; object-fit: cover; object-position: center; }
-.feature-meta .feature-image img { object-position: 48% center; }
+.feature-meta .feature-image img { object-position: 42% center; }
 .feature-body { padding: clamp(28px, 4vw, 54px); display: flex; flex-direction: column; justify-content: center; }
 .project-meta { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 20px; }
 .project-meta span, .status { display: inline-flex; width: fit-content; padding: 5px 8px; border-radius: 2px; background: var(--teal-soft); color: #0a5e58; font-size: .7rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
